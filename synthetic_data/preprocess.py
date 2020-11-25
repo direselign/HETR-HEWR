@@ -1,5 +1,5 @@
 label = []
-with open('/home/aclab/Documents/direse/dataset/word/ethiopic/label.txt', 'r') as f:
+with open('label.txt', 'r') as f:
     line = f.readline()
     for i in f:
         i = i.strip()
@@ -7,12 +7,12 @@ with open('/home/aclab/Documents/direse/dataset/word/ethiopic/label.txt', 'r') a
         i = i.split(" , ")[0]
         label.append(i.strip()) 
 
-train = int(len(label)*0.6) #take 
+train = int(len(label)*0.6)  
 valid = int(len(label)*.2)
 test = int(len(label)*.2)
 print("train = ",train, "test = ",test, "valid = ", valid)
 
-train_label = label[:train] # take only 30,000 -> train
+train_label = label[:train]  
 test_label1 = label[train+1:]
 
 test_label = test_label1[:int(len(test_label1)*.5)]
